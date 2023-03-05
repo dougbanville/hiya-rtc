@@ -1,7 +1,26 @@
 <h1>Allrigh lads</h1>
-<button type='button' {{on 'click' this.startRecording}}>Record</button>
-<button type='button' {{on 'click' this.stopRecording}}>Stop</button>
+<button
+  type='button'
+  class='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
+  {{on 'click' this.startCamera}}
+>
+  Start Camera
+</button>
+<button
+  type='button'
+  class='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
+  {{on 'click' this.startRecording}}
+>
+  Record
+</button>
+<button
+  type='button'
+  class='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'
+  {{on 'click' this.stopRecording}}
+>
+  Stop
+</button>
 
-<video controls playsinline id='hiya-video' {{this.videoRecorder}}>
+<video controls autoplay playsinline id='hiya-video' {{this.videoRecorder}}>
 
 </video>

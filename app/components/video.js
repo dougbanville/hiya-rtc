@@ -27,7 +27,7 @@ export default class VideoComponent extends Component {
   };
 
   @action
-  async startRecording() {
+  startCamera() {
     if (this.video) {
       this.captureCamera((camera) => {
         this.video.muted = true;
@@ -36,9 +36,8 @@ export default class VideoComponent extends Component {
 
         this.recorder = RecordRTC(camera, {
           type: 'video',
+          mimeType: 'video/webm',
         });
-
-        this.recorder.startRecording();
 
         // release camera on stopRecording
         this.recorder.camera = camera;
@@ -49,13 +48,18 @@ export default class VideoComponent extends Component {
   }
 
   @action
+  async startRecording() {
+    this.recorder.startRecording();
+  }
+
+  @action
   stopRecording() {
     this.recorder.stopRecording(() => {
       this.video.src = this.video.srcObject = null;
       this.video.muted = false;
       this.video.volume = 1;
       this.video.src = URL.createObjectURL(this.recorder.getBlob());
-      console.log(this.recorder);
+      console.log(this.video.src);
 
       this.recorder.camera.stop();
       this.recorder.destroy();
