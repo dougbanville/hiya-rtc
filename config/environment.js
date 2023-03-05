@@ -6,6 +6,16 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     locationType: 'history',
+    'ember-cloud-firestore-adapter': {
+      firebaseConfig: {
+        apiKey: process.env.apiKey,
+        authDomain: process.env.authDomain,
+        databaseURL: process.env.databaseURL,
+        projectId: process.env.projectId,
+        storageBucket: process.env.storageBucket,
+        messagingSenderId: process.env.messagingSenderId,
+      },
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

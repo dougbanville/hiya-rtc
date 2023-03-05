@@ -34,14 +34,17 @@
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.11",
     "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-dotenv": "^3.1.0",
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
+    "ember-cloud-firestore-adapter": "^3.1.0",
     "ember-data": "~4.3.0",
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.1.1",
     "ember-load-initializers": "^2.1.2",
+    "ember-modifier": "^4.0.0",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^5.1.5",
     "ember-resolver": "^8.0.3",
@@ -66,5 +69,10 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "@vercel/edge-config": "^0.1.1",
+    "dotenv": "^16.0.3",
+    "recordrtc": "^5.6.2"
   }
 }
