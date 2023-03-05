@@ -58,7 +58,8 @@ export default class VideoComponent extends Component {
       this.video.src = this.video.srcObject = null;
       this.video.muted = false;
       this.video.volume = 1;
-      this.video.src = URL.createObjectURL(this.recorder.getBlob());
+      const player = document.getElementById('player');
+      player.src = URL.createObjectURL(this.recorder.getBlob());
       console.log(this.video.src);
 
       this.recorder.camera.stop();
